@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Denunciar una bicicleta</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+
+	<ui:include src="./navbar.xhtml" />
+	<div class="container">
+		<div class="page-header">
+			<h2>Denunciar una bicicleta</h2>
+		</div>
+		<div class="row" align="center">
+			<FORM>
+				<h3>Elegir la estacion donde esta estacionada la bicicleta</h3>
+				<p>
+					<SELECT name="estacion" size="1">
+						<OPTION />Plaza San Martin
+							<OPTION />Plaza Moreno
+						
+						<OPTION />Plaza Malvinas
+					
+					</SELECT>
+				</p>
+				<h3>Cual es el numero de la bicicleta</h3>
+				<p>
+					<SELECT name="bicicleta" size="1">
+						<OPTION />01
+						
+						<OPTION />02
+						
+						<OPTION />03
+					
+					</SELECT>
+				</p>
+				<h3>Pueden hacer un comentario de algunas palabras para decir
+					cual es el problema con la bicicleta</h3>
+				<TEXTAREA name="comentario" rows="4" cols="40">Comentario</TEXTAREA>
+				<p>
+					<button type="submit" class="btn btn-success">Confirmar</button>
+				</p>
+			</FORM>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+	</h:body>
+</html>

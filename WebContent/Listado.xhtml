@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Listado de estaciones</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+
+	<ui:include src="./navbar.xhtml" />
+	<div class="container">
+
+		<div class="page-header">
+			<h1>Listado de las estaciones:</h1>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Ubicacion</th>
+						<th>Estado</th>
+						<th>Cantidad de bicicletas</th>
+						<th>Estacionamento libres</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Plaza San Martin</td>
+						<td>Calle 7 y 51</td>
+						<td>Operativa</td>
+						<td>5</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Plaza Italia</td>
+						<td>Calle 7 y 45</td>
+						<td>Operativa</td>
+						<td>6</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</h:body>
+</html>

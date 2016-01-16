@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Login</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+
+<ui:include src="./navbar.xhtml" />
+
+	<div class="container">
+		<br />
+		<div class="page-header">
+			<h1>Ingrese sus datos</h1>
+		</div>
+		<div class="row" align="left">
+			<h:form id="loginForm">
+				<h:message for="loginForm" />
+				<br />
+				<h:outputText value="Usuario (mail) " />
+				<h:inputText id="username" value="#{loginbean.username}"
+					required="true">
+				</h:inputText>
+				<h:message for="username" />
+				<br />
+				<h:outputText value="Contraseña " />
+				<h:inputSecret id="password" value="#{loginbean.password}"
+					required="true">
+				</h:inputSecret>
+				<h:message for="password" />
+				<br />
+				<h:commandButton id="submit" action="#{loginbean.login}"
+					value="Enviar" />
+			</h:form>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</h:body>
+</html>

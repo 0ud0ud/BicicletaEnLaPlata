@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Administracion de los usuarios</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+
+	<ui:include src="./navbar.xhtml" />
+	<div class="container">
+		<div class="page-header">
+			<h1>Administracion de los usuarios:</h1>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>DNI</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Fecha de Nacimiento</th>
+						<th>Domicilio</th>
+						<th>Sexo</th>
+						<th>Email</th>
+						<th>Inhabilitacion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>*********</td>
+						<td>Jean</td>
+						<td>Dupont</td>
+						<td>15/04/15</td>
+						<td>Calle 50 y 120</td>
+						<td>Masculino</td>
+						<td>jeandupont@gmail.com</td>
+						<td>Temporal</td>
+
+					</tr>
+					<tr>
+						<td>*********</td>
+						<td>Charles</td>
+						<td>Martin</td>
+						<td>15/03/15</td>
+						<td>Calle 60 y 120</td>
+						<td>Masculino</td>
+						<td>charlesmartin@gmail.com</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</h:body>
+</html>

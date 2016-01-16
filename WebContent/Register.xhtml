@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Inscripcion</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+
+	<ui:include src="./navbar.xhtml" />
+	<div class="container">
+		<br />
+		<div class="page-header">
+			<h1>Ingrese sus datos</h1>
+		</div>
+		<div class="row" align="left">
+			<h:form id="inscription">
+				<h:outputLabel for="dni">DNI	</h:outputLabel>
+				<h:inputText id="dni" value="#{registrarBean.dni}" required="true"
+					label="DNI" />
+				<h:message id="dniMessage" for="dni" errorClass="alert-danger" />
+				<br />
+
+				<h:outputLabel for="nombre">Nombre	</h:outputLabel>
+				<h:inputText id="nombre" value="#{registrarBean.nombre}"
+					required="true" label="Nombre" />
+				<h:message id="nombreMessage" for="nombre" errorClass="alert-danger" />
+				<br />
+
+				<h:outputLabel for="apellido">Apellido	</h:outputLabel>
+				<h:inputText id="apellido" value="#{registrarBean.apellido}"
+					required="true" label="Apellido" />
+				<h:message id="apellidoMessage" for="apellido"
+					errorClass="alert-danger" />
+				<br />
+
+				<h:outputLabel for="domicilio">Domicilio	</h:outputLabel>
+				<h:inputText id="domicilio" value="#{registrarBean.domicilio}"
+					required="true" label="Domicilio" />
+				<h:message id="domicilioMessage" for="domicilio"
+					errorClass="alert-danger" />
+				<br />
+				<h:outputLabel for="fecha">Fecha de Nacimiento	</h:outputLabel>
+				<h:inputText id="fecha" value="#{registrarBean.fecha}"
+					required="true" label="Fecha de Nacimiento" />
+				<h:message id="fechaMessage" for="fecha" errorClass="alert-danger" />
+				<br />
+
+				<h:outputLabel for="sexo">Sexo	</h:outputLabel>
+				<h:inputText id="sexo" value="#{registrarBean.sexo}" required="true"
+					label="Sexo" />
+				<h:message id="sexoMessage" for="sexo" errorClass="alert-danger" />
+				<br />
+
+				<h:outputLabel for="email">Email	</h:outputLabel>
+				<h:inputText id="email" value="#{registrarBean.mail}" required="true" label="Email" />
+				<h:message id="emailMessage" for="email" errorClass="alert-danger" />
+				<br />
+
+				<h:messages globalOnly="true" infoClass="alert-success" />
+
+				<h:commandButton value="Registracion"
+					action="#{registrarBean.inscripcion}" />
+			</h:form>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</h:body>
+</html>

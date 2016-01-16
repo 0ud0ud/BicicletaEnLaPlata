@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<div class="container">
+	<br />
+	<div class="page-header">
+		<h1>#{loginbean.user.nombre} #{loginbean.user.apellido}</h1>
+
+	</div>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-4 center-text">
+						<img class="img-thumbnail"
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+							alt="Generic placeholder image" width="140" height="200" />
+						<p>Mail: #{loginbean.user.mail}</p>
+					</div>
+					<div class="col-lg-4">
+						<p>DNI: #{loginbean.user.dni}</p>
+						<p>Nombre: #{loginbean.user.nombre}</p>
+						<p>Apellido: #{loginbean.user.apellido}</p>
+						<p>
+							<h:message styleClass="alert-success" id="MESSAGE" for="MESSAGE" />
+						</p>
+					</div>
+					<div class="col-lg-4">
+						<p>Domicilio: #{loginbean.user.domicilio}</p>
+						<p>Fecha de Nacimiento: #{loginbean.user.fecha}</p>
+						<p>Sexo: #{loginbean.user.sexo}</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-4">
+						<button type="button" class="btn btn-success btn-lg"
+							data-toggle="modal" data-target="#modal_modif">Modificar
+							info</button>
+					</div>
+					<div class="col-lg-4">
+						<button type="button" class="btn btn-success btn-lg"
+							data-toggle="modal" data-target="#modal_modif_pwd">Modificar
+							password</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 	 MODAL -->
+<div class="modal fade" id="modal_modif" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true"></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Modificacion de
+					usuario</h4>
+			</div>
+			<div class="modal-body">
+				<h:form id="modificacion">
+					<h:outputLabel value="DNI " for="dni"></h:outputLabel>
+					<h:inputText id="dni" value="#{modificacionbean.dni}" label="DNI" />
+					<br />
+
+					<h:outputLabel value="Nombre " for="nombre">	</h:outputLabel>
+					<h:inputText id="nombre" value="#{modificacionbean.nombre}"
+						label="Nombre" />
+					<br />
+
+					<h:outputLabel value="Apellido "  for="apellido">	</h:outputLabel>
+					<h:inputText id="apellido" value="#{modificacionbean.apellido}"
+						label="Apellido" />
+					<br />
+
+					<h:outputLabel value="Domicilio "  for="domicilio">	</h:outputLabel>
+					<h:inputText id="domicilio" value="#{modificacionbean.domicilio}"
+						label="Domicilio" />
+					<br />
+
+					<h:outputLabel  value="Fecha de Nacimiento " for="fecha"></h:outputLabel>
+					<h:inputText id="fecha" value="#{modificacionbean.fecha}"
+						label="Fecha de Nacimiento" />
+					<br />
+
+					<h:outputLabel value="Sexo "  for="sexo">	</h:outputLabel>
+					<h:inputText id="sexo" value="#{modificacionbean.sexo}"
+						label="Sexo" />
+					<br />
+
+					<h:outputLabel value="Email "  for="email">	</h:outputLabel>
+					<h:inputText id="email" value="#{modificacionbean.mail}"
+						label="Email" />
+					<br />
+
+					<h:messages globalOnly="true" infoClass="alert-success" />
+
+					<h:commandButton styleClass="btn btn-success" value="Modificacion"
+						action="#{modificacionbean.modificar}" />
+				</h:form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 	 MODAL -->
+<div class="modal fade" id="modal_modif_pwd" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true"></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Modificacion de
+					password</h4>
+			</div>
+			<div class="modal-body">
+				<h:form id="modificacion_pwd">
+					<h:outputLabel value="Actual Password "  for="oldpass">	</h:outputLabel>
+					<h:inputSecret id="oldpass" value="#{modificacionbean.pwd_old}"
+						required="true" label="Actual password"></h:inputSecret><br />
+					<h:message id="oldpassMessage" for="oldpass"
+						errorClass="alert-danger" />
+
+					<br />
+					<br />
+					
+					<h:outputLabel value="Nuevo Password "  for="newpass">	</h:outputLabel>
+					<h:inputSecret id="newpass" value="#{modificacionbean.pwd_nuevo}"
+						required="true" label="Nuevo Password"></h:inputSecret><br />
+					<h:message id="newpassMessage" for="newpass"
+						errorClass="alert-danger" />
+					<br />
+					
+
+					<h:outputLabel value="Confirmacion Password "  for="confirmpass">	</h:outputLabel>
+					<h:inputSecret id="confirmpass"
+						value="#{modificacionbean.pwd_confirmacion}" required="true"
+						label="Confirmacion del nuevo password"></h:inputSecret><br />
+					<h:message id="confirmpassMessage" for="confirmpass"
+						errorClass="alert-danger" />
+
+					<br />
+					<br />
+
+					<h:messages globalOnly="true" infoClass="alert-success" />
+
+					<h:commandButton styleClass="btn btn-success" value="Modificacion" action="#{modificacionbean.modificarpwd}" />
+				</h:form>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

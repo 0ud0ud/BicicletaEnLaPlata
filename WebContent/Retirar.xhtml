@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Retirar una bicicleta</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+	<ui:include src="./navbar.xhtml" />
+	<div class="container">
+		<div class="page-header">
+			<h2>Retirar una bicicleta</h2>
+		</div>
+		<div class="row" align="center">
+			<FORM>
+				<h3>Elegir una estacion</h3>
+				<p>
+					<SELECT name="estacion" size="1">
+						<OPTION />Plaza San Martin Plaza Moreno Plaza Malvinas
+
+						<OPTION />
+						<OPTION />
+					</SELECT>
+				</p>
+				<h3>Elegir una bicicleta</h3>
+				<p>
+					<SELECT name="bicicleta" size="1">
+						<OPTION />01
+
+						<OPTION />02
+
+						<OPTION />03
+					</SELECT>
+				</p>
+				<p>
+					<button type="submit" class="btn btn-success">Confirmar</button>
+				</p>
+			</FORM>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</h:body>
+</html>
+
+
+

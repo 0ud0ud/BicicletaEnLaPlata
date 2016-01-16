@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">JBici</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="./Accueil.xhtml">Home</a></li>
+				<li><a href="./MapEstaciones.xhtml">Mapa de estaciones</a></li>
+				<c:choose>
+					<c:when test="#{loginbean.iscomun}">
+							<li><a href="./usuariocomun.xhtml">Usuario</a></li>
+					</c:when>
+				</c:choose>
+				<c:choose>
+					<c:when test="#{loginbean.isadmin}">
+							<li><a href="./usuarioadmin.xhtml">Administracion</a></li>
+					</c:when>
+				</c:choose>
+			</ul>
+			<c:choose>
+				<c:when test="#{loginbean.user == null}">
+					<DIV class="navbar-form navbar-right">
+					<a href="./Register.xhtml"><button type="button"
+								class="btn btn-success">Registracion</button></a>
+						<a href="./login.xhtml"><button type="button"
+								class="btn btn-success">Sign in</button></a>
+					</DIV>
+				</c:when>
+				<c:otherwise>
+					<DIV class="navbar-form navbar-right">
+						<h:form id="logout"  >
+							<h:commandButton value="Logout" action="#{loginbean.logout}" styleClass="btn btn-success"/>
+						</h:form>
+					</DIV>
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<!--/.nav-collapse -->
+	</div>
+</nav>
+<br />
+<br />
+</html>

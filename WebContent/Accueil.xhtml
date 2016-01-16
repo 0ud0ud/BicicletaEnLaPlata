@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<link rel="icon" href="./images/favicon.ico" />
+
+	<title>Accueil</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet" />
+
+</h:head>
+
+<body>
+
+	<ui:include src="./navbar.xhtml" />
+
+	<!-- Carousel
+    ================================================== -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<p align="center">
+					<img class="first-slide" src="./images/plano.JPG" alt="First slide" />
+				</p>
+				<div class="container">
+					<div class="carousel-caption">
+						<font color="#FFFFFF"><h1>Bienvenido en JBici</h1>
+							<p>Sistema de bicicleta publica en La Plata!</p>
+							<p>Si no estas registrado</p></font>
+							<a href="/JBici/Register.xhtml"><button
+								type="button" class="btn btn-success btn-lg">Registrate</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+
+	<!-- /.carousel -->
+	<div class="container">
+		<div class="container marketing">
+			<!-- Three columns of text below the carousel -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-lg-4 col-lg-offset-4 text-center">
+							<img class="img" src="./images/velo.jpg"
+								alt="Generic placeholder image" width="200" height="140" />
+							<h2>JBici</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<p>El ciclismo urbano es toda una tendencia en la actualidad,
+								pues no solo ofrece múltiples ventajas para la salud, sino
+								también, es un noble medio de transporte que permite ahorrar
+								dinero y cuidar el medio ambiente. Además, los sistemas de
+								bicicleta pública cobran vida y se extienden ampliamente en
+								diversos países del mundo, con lo cual, cada vez es más fácil
+								hacerse de una bici y recorrer la ciudad con ella. Ejemplos de
+								estos sistemas públicos son Bike Rio, Barclays Bike.</p>
+							<p>Por otro lado, hay movimientos de ciclistas que impulsan
+								la bicicleta como estilo de vida urbano y hasta fomentan la
+								creación de grupos sociales que defienden la tendencia, por ello
+								y por todo lo antes dicho, hoy la bicicleta urbana es toda una
+								moda saludable a la cual podemos apuntarnos con facilidad.</p>
+							<p>Todos los estudios nacionales e internacionales nos dicen
+								que la bicicleta es el modo de transporte que más facilita una
+								mayor satisfacción en el desplazamiento habitual. El usuario de
+								automóvil vive con frecuencia momentos de estrés, causados por
+								carreteras atascadas, y en ocasiones de ira, relacionados con
+								pequeñas disputas por el espacio con otros conductores. La
+								movilidad activa (bicicleta y andar) ofrece un mayor bienestar
+								subjetivo. Para recorrer distancias inferiores a siete u ocho
+								kilómetros la bicicleta debe privilegiarse como alternativa de
+								transporte individual por parte de los municipios.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</body>
+</html>

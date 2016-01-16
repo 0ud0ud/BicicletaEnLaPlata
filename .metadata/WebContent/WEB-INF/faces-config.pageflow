@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14351835037331" configfile="/BicicletaEnLaPlata/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login" id="pf14357872794254" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" outlinks="pf143578730016811 pf14362087994630 pf14362087994631 pf14362089614814" inlinks="pf143578730016811 pf14362089614814 pf14362431149844 pf14363099444080" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuariocomun.xhtml" id="pf14362087994632" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" outlinks="pf14362431149846 pf14362431149844" inlinks="pf14362087994630 pf14362431149846" path="/usuariocomun.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarioadmin.xhtml" id="pf14362087994643" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" outlinks="pf14363099444080 pf14363099743672 pf14363100600653" inlinks="pf14362087994631 pf14363099743672 pf14363100600653" path="/usuarioadmin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Accueil.xhtml" id="pf143621189677611" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf143624320187711" path="/Accueil.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf143624320187712" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf143624320187711" path="*"/>
+  <links id="pf143578730016811" target="pf14357872794254" source="pf14357872794254" outcome="success"/>
+  <links id="pf14362087994630" target="pf14362087994632" source="pf14357872794254" outcome="success_comun"/>
+  <links id="pf14362087994631" target="pf14362087994643" source="pf14357872794254" outcome="success_admin"/>
+  <links id="pf14362089614814" target="pf14357872794254" source="pf14357872794254" outcome="failure"/>
+  <links id="pf14362431149846" target="pf14362087994632" source="pf14362087994632" outcome="success_modificacion"/>
+  <links id="pf14362431149844" target="pf14357872794254" source="pf14362087994632" outcome="fail"/>
+  <links id="pf143624320187711" target="pf143621189677611" source="pf143624320187712" outcome="logout"/>
+  <links id="pf14363099444080" target="pf14357872794254" source="pf14362087994643" outcome="fail"/>
+  <links id="pf14363099743672" target="pf14362087994643" source="pf14362087994643" outcome="success"/>
+  <links id="pf14363100600653" target="pf14362087994643" source="pf14362087994643" outcome="failure"/>
+</pageflow:Pageflow>

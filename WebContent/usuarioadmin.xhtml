@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Usuario Administrador</title>
+	<link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="./images/favicon.ico" />
+
+</h:head>
+<h:body>
+	<ui:include src="./navbar.xhtml" />
+	<ui:include src="./afficheusuario.xhtml" />
+	<div class="container marketing text-center">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-4">
+						<a href="./AdminEstacion.xhtml"> <img class="img-circle"
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+							alt="Generic placeholder image" width="140" height="140" />
+							<h2>Administracion de estacion</h2>
+						</a>
+					</div>
+					<!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<a href="./AdminBici.xhtml"> <img class="img-circle"
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+							alt="Generic placeholder image" width="140" height="140" />
+							<h2>Administracion de bicicleta</h2>
+						</a>
+					</div>
+					<!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<a href="./AdminUsuario.xhtml"> <img class="img-circle"
+							src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+							alt="Generic placeholder image" width="140" height="140" />
+							<h2>Administracion de usuario</h2>
+						</a>
+					</div>
+					<!-- /.col-lg-4 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-4 center-text">
+						<h:form id="modif_user">
+							<h:message for="modif_user" />
+							<br />
+							<h:outputLabel value="Mail : " for="mail_usr"></h:outputLabel>
+							<h:inputText id="mail_usr" value="#{modificacionbean.mail_usr}"
+								label="mail_usr" />
+							<br />
+
+							<h:messages globalOnly="true" infoClass="alert-danger" />
+
+							<h:commandButton styleClass="btn btn-success" type="submit"
+								value="Consultar un usuario"
+								action="#{modificacionbean.modificarusuario}" />
+						</h:form>
+					</div>
+				</div>
+				<c:choose>
+					<c:when test="#{modificacionbean.user_modif != null}">
+						<div class="row">
+							<div class="col-lg-12 center-text">
+								<div class="panel panel-default">
+									<div class="panel-head">
+										<h2>#{modificacionbean.user_modif.nombre}
+											#{modificacionbean.user_modif.apellido}</h2>
+									</div>
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-lg-4 center-text">
+												<img class="img-thumbnail"
+													src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+													alt="Generic placeholder image" width="140" height="200" />
+												<p>Mail: #{modificacionbean.user_modif.mail}</p>
+											</div>
+											<div class="col-lg-4">
+												<p>DNI: #{modificacionbean.user_modif.dni}</p>
+												<p>Nombre: #{modificacionbean.user_modif.nombre}</p>
+												<p>Apellido: #{modificacionbean.user_modif.apellido}</p>
+												<p>
+													Estado:
+													<c:choose>
+														<c:when test="#{modificacionbean.user_modif.suspended}">
+															<h3>
+																<span class="label label-danger ">SUSPENDIDO</span>
+															</h3>
+														</c:when>
+														<c:otherwise>
+															<h3>
+																<span class="label label-success ">NO SUSPENDIDO</span>
+															</h3>
+														</c:otherwise>
+													</c:choose>
+												</p>
+											</div>
+											<div class="col-lg-4">
+												<p>Domicilio: #{modificacionbean.user_modif.domicilio}</p>
+												<p>Fecha de Nacimiento:
+													#{modificacionbean.user_modif.fecha}</p>
+												<p>Sexo: #{modificacionbean.user_modif.sexo}</p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-lg-4"></div>
+											<div class="col-lg-4">
+												<c:choose>
+													<c:when test="#{modificacionbean.user_modif.suspended}">
+														<h:form id="unbaja">
+															<h:message for="unbaja" />
+															<h:messages globalOnly="true" infoClass="alert-success" />
+															<h:commandButton styleClass="btn btn-success"
+																type="submit" value="Cancelar inhabilitacion de usuario"
+																action="#{modificacionbean.bajadeusuario}" />
+														</h:form>
+													</c:when>
+													<c:otherwise>
+														<h:form id="baja">
+															<h:message for="baja" />
+															<h:messages globalOnly="true" infoClass="alert-success" />
+															<h:commandButton styleClass="btn btn-danger"
+																type="submit" value="Inhabilitar el usuario"
+																action="#{modificacionbean.bajadeusuario}" />
+														</h:form>
+													</c:otherwise>
+												</c:choose>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:when>
+				</c:choose>
+			</div>
+		</div>
+	</div>
+	<ui:include src="./footer.xhtml" />
+</h:body>
+</html>
